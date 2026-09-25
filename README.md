@@ -12,6 +12,11 @@ Instead of keeping track of solved problems, topics, and progress manually, the 
 
 The project is also being developed as part of my journey toward becoming a stronger software developer, with the application evolving alongside my web-development skills.
 
+## 🔗 Live Demo
+
+👉 **[View DSA Tracker](https://mirza-anas18.github.io/DSA-TRACKER/)**
+
+
 ## ✨ Current Features
 
 * 📊 DSA progress dashboard
