@@ -216,6 +216,9 @@ nav h2 {
 
 .topic-info {
     flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
 }
 
 .topic-info h2 {
