@@ -39,9 +39,15 @@ const problems = {
 
 const easyProblems = problems.arrays.easy;
 
+//storing the checkboxes in local storage using solvedproblems variable!
+let solvedProblems = JSON.parse(localStorage.getItem("solvedProblems")) || {};
+
+
 const easyContent = document.getElementById("easy-content");
 
-easyProblems.forEach(function(problem) {
+
+
+easyProblems.forEach(function (problem) {
 
     const problemItem = document.createElement("div");
 
@@ -56,9 +62,13 @@ easyProblems.forEach(function(problem) {
     const checkbox = document.createElement("input");
 
     checkbox.type = "checkbox";
-    
+    checkbox.checked = solvedProblems[problem] || false;
+
     checkbox.addEventListener("change", function () {
-        console.log(problem, checkbox.checked);
+        solvedProblems[problem] = checkbox.checked;
+        
+
+        localStorage.setItem("solvedProblems", JSON.stringify(solvedProblems));
     });
 
     problemItem.appendChild(checkbox);
