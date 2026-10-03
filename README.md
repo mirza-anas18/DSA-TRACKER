@@ -62,15 +62,16 @@ DSA-Tracker/
 * [x] Create DSA topics page
 * [x] Create DSA sheets page
 * [x] Add initial progress tracking UI
-* [ ] Store DSA problems using JavaScript objects
-* [ ] Add interactive problem checkboxes
-* [ ] Add persistent progress tracking
-* [ ] Improve dashboard statistics
+* [x] Store DSA problems using JavaScript objects
+* [x] Add interactive problem checkboxes
+* [x] Add persistent progress tracking
+* [x] Improve dashboard statistics
 * [ ] Refactor and organize JavaScript
 * [ ] Rebuild the frontend using React
 * [ ] Develop backend using Node.js and Express
 * [ ] Integrate MongoDB
 * [ ] Deploy the full-stack application
+
 
 ## 🎯 Goals
 
