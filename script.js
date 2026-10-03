@@ -362,6 +362,11 @@ function updateOverallProgress() {
 //SAVING ALL THE SOLVED PROBLEMS MARKED AS TRUE IN LOCALSTORAGE FOR DASHBOARD! 
 function updateSolvedProblems() {
 
+    const solvedProblemsElement =
+        document.getElementById("solved-problems");
+
+    if (!solvedProblemsElement) return;
+
     let solved = 0;
 
     allProblems.forEach(function (problem) {
@@ -372,7 +377,7 @@ function updateSolvedProblems() {
 
     });
 
-    document.getElementById("solved-problems").textContent = solved;
+    solvedProblemsElement.textContent = solved;
 }
 
 
@@ -549,5 +554,428 @@ updateSolvedProblems();
 
 
 //SHOWING TOTAL PROBLEMS ON DASHBOARD!
-document.getElementById("total-problems").textContent =
-    allProblems.length;
+const totalProblemsElement =
+    document.getElementById("total-problems");
+
+if (totalProblemsElement) {
+    totalProblemsElement.textContent = allProblems.length;
+}
+//--------------------------------------------------------------------.....--------------////
+// ===============================
+// STRIVER A2Z SHEET
+// ===============================
+
+const striverTopicsContainer =
+    document.getElementById("striver-topics");
+
+if (striverTopicsContainer) {
+
+    fetch("data/striver.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+
+            data.topics.forEach(function(topic) {
+
+                // -------------------------------
+                // TOPIC CONTAINER
+                // -------------------------------
+
+                const topicDropdown =
+                    document.createElement("div");
+
+                topicDropdown.classList.add("topic-dropdown");
+
+
+                // -------------------------------
+                // TOPIC HEADER
+                // -------------------------------
+
+                const topicHeader =
+                    document.createElement("div");
+
+                topicHeader.classList.add("topic-header");
+
+
+                // TOPIC INFO
+
+                const topicInfo =
+                    document.createElement("div");
+
+                topicInfo.classList.add("topic-info");
+
+
+                // TOPIC NAME
+
+                const topicName =
+                    document.createElement("h2");
+
+                topicName.textContent = topic.name;
+
+
+                // -------------------------------
+                // TOPIC PROGRESS
+                // -------------------------------
+
+                const topicProgress =
+                    document.createElement("div");
+
+                topicProgress.classList.add("topic-progress");
+
+
+                const progressText =
+                    document.createElement("span");
+
+
+                const progressBar =
+                    document.createElement("div");
+
+                progressBar.classList.add("progress-bar");
+
+
+                const progressFill =
+                    document.createElement("div");
+
+                progressFill.classList.add("progress-fill");
+
+
+                progressBar.appendChild(progressFill);
+
+                topicProgress.appendChild(progressText);
+                topicProgress.appendChild(progressBar);
+
+                topicInfo.appendChild(topicName);
+                topicInfo.appendChild(topicProgress);
+
+
+                // -------------------------------
+                // TOPIC ARROW
+                // -------------------------------
+
+                const topicArrow =
+                    document.createElement("span");
+
+                topicArrow.textContent = "▼";
+
+
+                topicHeader.appendChild(topicInfo);
+                topicHeader.appendChild(topicArrow);
+
+
+                // -------------------------------
+                // DIFFICULTY CONTAINER
+                // -------------------------------
+
+                const difficultySection =
+                    document.createElement("div");
+
+                difficultySection.classList.add(
+                    "difficulty-section"
+                );
+
+                difficultySection.style.display = "none";
+
+
+                // -------------------------------
+                // CREATE DIFFICULTY
+                // -------------------------------
+
+                function createDifficulty(
+                    difficultyName,
+                    problemList
+                ) {
+
+                    const difficultyHeader =
+                        document.createElement("div");
+
+                    difficultyHeader.classList.add(
+                        "difficulty-header"
+                    );
+
+
+                    const difficultyTitle =
+                        document.createElement("h3");
+
+                    difficultyTitle.textContent =
+                        difficultyName;
+
+
+                    const difficultyArrow =
+                        document.createElement("span");
+
+                    difficultyArrow.textContent = "▼";
+
+
+                    difficultyHeader.appendChild(
+                        difficultyTitle
+                    );
+
+                    difficultyHeader.appendChild(
+                        difficultyArrow
+                    );
+
+
+                    // PROBLEMS LIST
+
+                    const problemsList =
+                        document.createElement("div");
+
+                    problemsList.classList.add(
+                        "problems-list"
+                    );
+
+                    problemsList.style.display = "none";
+
+
+                    // CREATE EACH PROBLEM
+
+                    problemList.forEach(function(problem) {
+
+                        const problemItem =
+                            document.createElement("div");
+
+                        problemItem.classList.add(
+                            "problem-item"
+                        );
+
+
+                        const problemName =
+                            document.createElement("span");
+
+                        problemName.textContent = problem;
+
+
+                        const checkbox =
+                            document.createElement("input");
+
+                        checkbox.type = "checkbox";
+
+
+                        // LOAD SAVED PROGRESS
+
+                        checkbox.checked =
+                            solvedProblems[problem] || false;
+
+
+                        // CHECKBOX EVENT
+
+                        checkbox.addEventListener(
+                            "change",
+                            function() {
+
+                                solvedProblems[problem] =
+                                    checkbox.checked;
+
+
+                                localStorage.setItem(
+                                    "solvedProblems",
+                                    JSON.stringify(
+                                        solvedProblems
+                                    )
+                                );
+
+
+                                updateTopicProgress();
+
+                                updateOverallProgress();
+
+                                updateSolvedProblems();
+
+                            }
+                        );
+
+
+                        problemItem.appendChild(problemName);
+
+                        problemItem.appendChild(checkbox);
+
+                        problemsList.appendChild(problemItem);
+
+                    });
+
+
+                    // DIFFICULTY DROPDOWN
+
+                    difficultyHeader.addEventListener(
+                        "click",
+                        function() {
+
+                            if (
+                                problemsList.style.display ===
+                                "none"
+                            ) {
+
+                                problemsList.style.display =
+                                    "block";
+
+                                difficultyArrow.textContent =
+                                    "▶";
+
+                            } else {
+
+                                problemsList.style.display =
+                                    "none";
+
+                                difficultyArrow.textContent =
+                                    "▼";
+
+                            }
+
+                        }
+                    );
+
+
+                    difficultySection.appendChild(
+                        difficultyHeader
+                    );
+
+                    difficultySection.appendChild(
+                        problemsList
+                    );
+
+                }
+
+
+                // -------------------------------
+                // ADD EASY / MEDIUM / HARD
+                // -------------------------------
+
+                createDifficulty(
+                    "Easy",
+                    topic.easy || []
+                );
+
+                createDifficulty(
+                    "Medium",
+                    topic.medium || []
+                );
+
+                createDifficulty(
+                    "Hard",
+                    topic.hard || []
+                );
+
+
+                // -------------------------------
+                // TOPIC DROPDOWN
+                // -------------------------------
+
+                topicHeader.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            difficultySection.style.display ===
+                            "none"
+                        ) {
+
+                            difficultySection.style.display =
+                                "block";
+
+                            topicArrow.textContent =
+                                "▶";
+
+                        } else {
+
+                            difficultySection.style.display =
+                                "none";
+
+                            topicArrow.textContent =
+                                "▼";
+
+                        }
+
+                    }
+                );
+
+
+                // -------------------------------
+                // TOPIC PROGRESS FUNCTION
+                // -------------------------------
+
+                function updateTopicProgress() {
+
+                    let completed = 0;
+
+                    let total = 0;
+
+
+                    ["easy", "medium", "hard"].forEach(
+                        function(difficulty) {
+
+                            const problems =
+                                topic[difficulty] || [];
+
+                            total += problems.length;
+
+
+                            problems.forEach(
+                                function(problem) {
+
+                                    if (
+                                        solvedProblems[problem]
+                                    ) {
+
+                                        completed++;
+
+                                    }
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                    progressText.textContent =
+                        `${completed} / ${total} completed`;
+
+
+                    const percentage =
+                        total === 0
+                            ? 0
+                            : (completed / total) * 100;
+
+
+                    progressFill.style.width =
+                        `${percentage}%`;
+
+                }
+
+
+                // -------------------------------
+                // PUT EVERYTHING ON PAGE
+                // -------------------------------
+
+                topicDropdown.appendChild(
+                    topicHeader
+                );
+
+                topicDropdown.appendChild(
+                    difficultySection
+                );
+
+                striverTopicsContainer.appendChild(
+                    topicDropdown
+                );
+
+
+                // INITIAL PROGRESS
+
+                updateTopicProgress();
+
+            });
+
+        })
+
+        .catch(function(error) {
+
+            console.error(
+                "Error loading Striver data:",
+                error
+            );
+
+        });
+
+}

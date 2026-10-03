@@ -1,0 +1,31 @@
+{
+    "sheetName": "Striver A2Z",
+    "topics": [
+        {
+            "name": "Arrays",
+            "easy": [
+                "Two Sum",
+                "Move Zeroes"
+            ],
+            "medium": [
+                "Maximum Subarray"
+            ],
+            "hard": [
+                "Trapping Rain Water"
+            ]
+        },
+        {
+            "name": "Binary Search",
+            "easy": [
+                "Binary Search",
+                "Lower Bound"
+            ],
+            "medium": [
+                "Search in Rotated Sorted Array"
+            ],
+            "hard": [
+                "Median of Two Sorted Arrays"
+            ]
+        }
+    ]
+}
