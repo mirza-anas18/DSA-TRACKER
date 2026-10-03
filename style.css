@@ -46,7 +46,7 @@ nav h2 {
     text-align: center;
     max-width: 800px;
     margin: 120px auto;
-    margin-bottom: 95px; 
+    margin-bottom: 75px; 
     padding: 20px;
 }
 
@@ -255,6 +255,14 @@ nav h2 {
     border-radius: 10px;
 }
 
+.stat .progress-bar {
+    border-radius: 0;
+}
+
+.stat .progress-fill {
+    border-radius: 0;
+}
+
 .topic-card button {
     padding: 7px 16px;
     border: none;
@@ -403,3 +411,14 @@ nav h2 {
     margin: 0 auto;
 }
 
+
+
+.stat .progress-bar {
+    width: 30%;
+    height: 3vh;
+    border: 2px solid white;
+    border-radius: 0;
+    margin-left: 36vw;
+    margin-bottom: 3vh;
+    border-radius: 0;
+}

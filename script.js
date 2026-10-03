@@ -1,6 +1,8 @@
 //FUNCTION FOR DROPDOWN BUTTON!
 function setupDropdown(header, content, arrow) {
 
+    if (!header || !content || !arrow) return;
+    
     content.style.display = "none";
 
     header.addEventListener("click", function () {
@@ -186,67 +188,225 @@ const problems = {
 
     strings: {
 
-    easy: [
-        "Reverse String",
-        "Valid Palindrome",
-        "Valid Anagram"
-    ],
+        easy: [
+            "Reverse String",
+            "Valid Palindrome",
+            "Valid Anagram"
+        ],
 
-    medium: [
-        "Longest Substring Without Repeating Characters",
-        "Group Anagrams"
-    ],
+        medium: [
+            "Longest Substring Without Repeating Characters",
+            "Group Anagrams"
+        ],
 
-    hard: [
-        "Minimum Window Substring"
-    ]
+        hard: [
+            "Minimum Window Substring"
+        ]
 
-},
+    },
 
-linkedList: {
+    linkedList: {
 
-    easy: [
-        "Reverse Linked List",
-        "Middle of the Linked List",
-        "Remove Duplicates from Sorted List"
-    ],
+        easy: [
+            "Reverse Linked List",
+            "Middle of the Linked List",
+            "Remove Duplicates from Sorted List"
+        ],
 
-    medium: [
-        "Add Two Numbers",
-        "Linked List Cycle II"
-    ],
+        medium: [
+            "Add Two Numbers",
+            "Linked List Cycle II"
+        ],
 
-    hard: [
-        "Merge k Sorted Lists"
-    ]
+        hard: [
+            "Merge k Sorted Lists"
+        ]
 
-},
+    },
 
-stackQueue: {
+    stackQueue: {
 
-    easy: [
-        "Implement Stack using Arrays",
-        "Implement Queue using Arrays",
-        "Valid Parentheses"
-    ],
+        easy: [
+            "Implement Stack using Arrays",
+            "Implement Queue using Arrays",
+            "Valid Parentheses"
+        ],
 
-    medium: [
-        "Next Greater Element",
-        "Min Stack"
-    ],
+        medium: [
+            "Next Greater Element",
+            "Min Stack"
+        ],
 
-    hard: [
-        "Largest Rectangle in Histogram"
-    ]
+        hard: [
+            "Largest Rectangle in Histogram"
+        ]
 
-}
+    }
 };
+
+//KEEPING ALL THE ARRAY PROBLEMS AT ONE PLACE TO CALCULATE THE PROGRESS WITH JS!
+const allArrayProblems = [
+    ...problems.arrays.easy,
+    ...problems.arrays.medium,
+    ...problems.arrays.hard
+];
+
+function updateArraysProgress() {
+    updateProgress(
+        allArrayProblems,
+        document.getElementById("arrays-progress"),
+        document.getElementById("arrays-progress-fill")
+    );
+}
+
+
+//ALL BS PROBLEMS AT ONE PLACE FOR PROGRESS BAR!
+const allBinarySearchProblems = [
+    ...problems.binarySearch.easy,
+    ...problems.binarySearch.medium,
+    ...problems.binarySearch.hard
+];
+
+function updateBinarySearchProgress() {
+    updateProgress(
+        allBinarySearchProblems,
+        document.getElementById("binary-search-progress"),
+        document.getElementById("binary-search-progress-fill")
+    );
+}
+
+//ALL STRINGS PROBLEMS FOR CALCULATING THE PROGRESS FOR PROGRESS BAR!
+const allStringsProblems = [
+    ...problems.strings.easy,
+    ...problems.strings.medium,
+    ...problems.strings.hard
+];
+
+function updateStringsProgress() {
+    updateProgress(
+        allStringsProblems,
+        document.getElementById("strings-progress"),
+        document.getElementById("strings-progress-fill")
+    );
+}
+
+// ALL LINKEDLISTS PROBLEMS FOR PROGRESS BAR IN ONE ARRAY!
+const allLinkedListProblems = [
+    ...problems.linkedList.easy,
+    ...problems.linkedList.medium,
+    ...problems.linkedList.hard
+];
+
+function updateLinkedListProgress() {
+    updateProgress(
+        allLinkedListProblems,
+        document.getElementById("linked-list-progress"),
+        document.getElementById("linked-list-progress-fill")
+    );
+}
+
+// ALL STACKS-QUEUES PROBLEMS IN ONE PLACE FOR PROGRESS-BAR!
+const allStackQueueProblems = [
+    ...problems.stackQueue.easy,
+    ...problems.stackQueue.medium,
+    ...problems.stackQueue.hard
+];
+
+function updateStackQueueProgress() {
+    updateProgress(
+        allStackQueueProblems,
+        document.getElementById("stack-queue-progress"),
+        document.getElementById("stack-queue-progress-fill")
+    );
+}
+
+// ALL PROBLEMS FOR THE PROGRESS BAR ON DASHBOARD!
+const allProblems = [
+    ...allArrayProblems,
+    ...allBinarySearchProblems,
+    ...allStringsProblems,
+    ...allLinkedListProblems,
+    ...allStackQueueProblems
+];
 
 //storing the checkboxes in local storage using solvedproblems variable!
 let solvedProblems = JSON.parse(localStorage.getItem("solvedProblems")) || {};
 
+function updateOverallProgress() {
+
+    const overallProgressFill =
+        document.getElementById("overall-progress-fill");
+
+    if (!overallProgressFill) return;
+
+    let completed = 0;
+
+    allProblems.forEach(function (problem) {
+
+        if (solvedProblems[problem]) {
+            completed++;
+        }
+
+    });
+
+    const total = allProblems.length;
+
+    const percentage = (completed / total) * 100;
+
+    overallProgressFill.style.width =
+        `${percentage}%`;
+
+}
+
+
+//SAVING ALL THE SOLVED PROBLEMS MARKED AS TRUE IN LOCALSTORAGE FOR DASHBOARD! 
+function updateSolvedProblems() {
+
+    let solved = 0;
+
+    allProblems.forEach(function (problem) {
+
+        if (solvedProblems[problem]) {
+            solved++;
+        }
+
+    });
+
+    document.getElementById("solved-problems").textContent = solved;
+}
+
+
+//CREATING A FUNCTION FOR PROGRESS BAR ON PROBLEM TOPICS: ARRAYS,BS,ETC!
+function updateProgress(problemList, progressElement, progressFill) {
+
+    if (!progressElement || !progressFill) return;
+
+    let completed = 0;
+
+    problemList.forEach(function (problem) {
+
+        if (solvedProblems[problem]) {
+            completed++;
+        }
+
+    });
+
+
+    const total = problemList.length;
+
+    const percentage = (completed / total) * 100;
+
+    progressFill.style.width = `${percentage}%`;
+
+    progressElement.textContent = `${completed} / ${total} completed`;
+
+}
+
 // creating the questions generating function 
-function createProblems(problemList, container) {
+function createProblems(problemList, container, updateTopicProgress) {
+
+
+      if (!container) return;
 
     problemList.forEach(function (problem) {
 
@@ -271,6 +431,9 @@ function createProblems(problemList, container) {
                 "solvedProblems",
                 JSON.stringify(solvedProblems)
             );
+//CALLING THE UPDATE FUNCTION TO UPDATE THE PROGRESS BAR!
+            updateTopicProgress();
+            updateOverallProgress();
 
         });
 
@@ -283,79 +446,108 @@ function createProblems(problemList, container) {
 // GENERATING PROBLEMS FOR ARRAY'S
 createProblems(
     problems.arrays.easy,
-    document.getElementById("easy-content")
+    document.getElementById("easy-content"),
+    updateArraysProgress
 );
 
 createProblems(
     problems.arrays.medium,
-    document.getElementById("medium-content")
+    document.getElementById("medium-content"),
+    updateArraysProgress
 );
 
 createProblems(
     problems.arrays.hard,
-    document.getElementById("hard-content")
+    document.getElementById("hard-content"),
+    updateArraysProgress
 );
 
 //GENERATING PROBLEMS FOR BINARY SEARCH!
 createProblems(
     problems.binarySearch.easy,
-    document.getElementById("binary-search-easy-content")
+    document.getElementById("binary-search-easy-content"),
+    updateBinarySearchProgress
 );
 
 createProblems(
     problems.binarySearch.medium,
-    document.getElementById("binary-search-medium-content")
+    document.getElementById("binary-search-medium-content"),
+    updateBinarySearchProgress
 );
 
 createProblems(
     problems.binarySearch.hard,
-    document.getElementById("binary-search-hard-content")
+    document.getElementById("binary-search-hard-content"),
+    updateBinarySearchProgress
 );
 
 //GENERATING PROBLEMS FOR STRINGS:
 createProblems(
     problems.strings.easy,
-    document.getElementById("strings-easy-content")
+    document.getElementById("strings-easy-content"),
+    updateStringsProgress
 );
 
 createProblems(
     problems.strings.medium,
-    document.getElementById("strings-medium-content")
+    document.getElementById("strings-medium-content"),
+    updateStringsProgress
 );
 
 createProblems(
     problems.strings.hard,
-    document.getElementById("strings-hard-content")
+    document.getElementById("strings-hard-content"),
+    updateStringsProgress
 );
 
 //GENERATING PROBLEMS FOR LINKEDLISTS:
 createProblems(
     problems.linkedList.easy,
-    document.getElementById("linked-list-easy-content")
+    document.getElementById("linked-list-easy-content"),
+    updateLinkedListProgress
 );
 
 createProblems(
     problems.linkedList.medium,
-    document.getElementById("linked-list-medium-content")
+    document.getElementById("linked-list-medium-content"),
+    updateLinkedListProgress
 );
 
 createProblems(
     problems.linkedList.hard,
-    document.getElementById("linked-list-hard-content")
+    document.getElementById("linked-list-hard-content"),
+    updateLinkedListProgress
 );
 
 //GENERATING PROBLEMS FOR STACKS AND QUEUES :)
 createProblems(
     problems.stackQueue.easy,
-    document.getElementById("stack-queue-easy-content")
+    document.getElementById("stack-queue-easy-content"),
+    updateStackQueueProgress
 );
 
 createProblems(
     problems.stackQueue.medium,
-    document.getElementById("stack-queue-medium-content")
+    document.getElementById("stack-queue-medium-content"),
+    updateStackQueueProgress
 );
 
 createProblems(
     problems.stackQueue.hard,
-    document.getElementById("stack-queue-hard-content")
+    document.getElementById("stack-queue-hard-content"),
+    updateStackQueueProgress
 );
+
+//CALLING THE FUNCTION TO GENERATE THE PROGRESS BAR!
+updateArraysProgress();
+updateBinarySearchProgress();
+updateStringsProgress();
+updateLinkedListProgress();
+updateStackQueueProgress();
+updateOverallProgress();
+updateSolvedProblems();
+
+
+//SHOWING TOTAL PROBLEMS ON DASHBOARD!
+document.getElementById("total-problems").textContent =
+    allProblems.length;
