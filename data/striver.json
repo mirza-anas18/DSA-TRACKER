@@ -1,31 +1,636 @@
 {
-    "sheetName": "Striver A2Z",
-    "topics": [
-        {
-            "name": "Arrays",
-            "easy": [
-                "Two Sum",
-                "Move Zeroes"
-            ],
-            "medium": [
-                "Maximum Subarray"
-            ],
-            "hard": [
-                "Trapping Rain Water"
-            ]
-        },
-        {
-            "name": "Binary Search",
-            "easy": [
-                "Binary Search",
-                "Lower Bound"
-            ],
-            "medium": [
-                "Search in Rotated Sorted Array"
-            ],
-            "hard": [
-                "Median of Two Sorted Arrays"
-            ]
-        }
-    ]
+  "topics": [
+    {
+      "name": "Learn the basics",
+      "easy": [
+        "Input Output",
+        "Cpp Basics",
+        "If ElseIf",
+        "Switch Case",
+        "What are arrays, strings?",
+        "For loops",
+        "While loops",
+        "Functions (Pass by Reference and Value)",
+        "Theory with examples",
+        "Easy and Medium",
+        "Hard",
+        "Pattern 1",
+        "Pattern 2",
+        "Pattern 3",
+        "Pattern 4",
+        "Pattern 5",
+        "Pattern 6",
+        "Pattern 7",
+        "Pattern 8",
+        "Pattern 9",
+        "Pattern 10",
+        "Pattern 11",
+        "Pattern 12",
+        "Pattern 13",
+        "Pattern 14",
+        "Pattern 15",
+        "Pattern 16",
+        "Pattern 17",
+        "Pattern 18",
+        "Pattern 19",
+        "STL",
+        "Java Collections",
+        "Count all Digits of a Number",
+        "Reverse a number",
+        "Palindrome Number",
+        "GCD of Two Numbers",
+        "Check if the Number is Armstrong",
+        "Print all Divisors",
+        "Check for Prime Number",
+        "Understand recursion by print something N times",
+        "Print name N times using recursion",
+        "Print 1 to N using Recursion",
+        "Print N to 1 using Recursion",
+        "Sum of First N Numbers",
+        "Factorial of a given number",
+        "Reverse an array",
+        "Check if String is Palindrome or Not ",
+        "Fibonacci Number",
+        "Basic Hashing",
+        "Counting Frequencies of Array Elements",
+        "Highest Occurring Element in an Array"
+      ],
+      "medium": [
+        "Pattern 20",
+        "Pattern 21",
+        "Pattern 22"
+      ],
+      "hard": []
+    },
+    {
+      "name": "Learn Important Sorting Techniques",
+      "easy": [
+        "Selection Sort",
+        "Bubble Sort",
+        "Insertion Sorting",
+        "Recursive Bubble Sort",
+        "Recursive Insertion Sort",
+        "Quick Sorting"
+      ],
+      "medium": [
+        "Merge Sorting"
+      ],
+      "hard": []
+    },
+    {
+      "name": "Solve Problems on Arrays [Easy -> Medium -> Hard]",
+      "easy": [
+        "Largest Element ",
+        "Second Largest Element",
+        "Check if the Array is Sorted II",
+        "Remove duplicates from Sorted array",
+        "Left Rotate Array by One",
+        "Left Rotate Array by K Places",
+        "Move Zeros to End",
+        "Linear Search",
+        "Union of two sorted arrays",
+        "Find missing number",
+        "Maximum Consecutive Ones",
+        "Two Sum",
+        "Majority Element-I",
+        "Pascal's Triangle I"
+      ],
+      "medium": [
+        "Find the number that appears once, and other numbers twice.",
+        "Longest subarray with given sum K(positives)",
+        "Longest subarray with sum K",
+        "Sort an array of 0's 1's and 2's",
+        "Kadane's Algorithm",
+        "Print subarray with maximum subarray sum (extended version of above problem)",
+        "Stock Buy and Sell",
+        "Rearrange array elements by sign",
+        "Next Permutation",
+        "Leaders in an Array",
+        "Longest Consecutive Sequence in an Array",
+        "Set Matrix Zeroes",
+        "Rotate matrix by 90 degrees",
+        "Print the matrix in spiral manner",
+        "Count subarrays with given sum",
+        "3 Sum",
+        "4 Sum",
+        "Largest Subarray with Sum 0",
+        "Merge Overlapping Subintervals",
+        "Merge two sorted arrays without extra space"
+      ],
+      "hard": [
+        "Majority Element-II",
+        "Count subarrays with given xor K",
+        "Find the repeating and missing number",
+        "Count Inversions",
+        "Reverse Pairs",
+        "Maximum Product Subarray in an Array"
+      ]
+    },
+    {
+      "name": "Binary Search [1D, 2D Arrays, Search Space]",
+      "easy": [
+        "Search X in sorted array",
+        "Lower Bound ",
+        "Upper Bound",
+        "Search insert position",
+        "Floor and Ceil in Sorted Array",
+        "First and last occurrence",
+        "Count Occurrences in a Sorted Array",
+        "Find minimum in Rotated Sorted Array",
+        "Find out how many times the array is rotated",
+        "Find row with maximum 1's"
+      ],
+      "medium": [
+        "Search in rotated sorted array-I",
+        "Search in rotated sorted array-II",
+        "Single element in a Sorted Array",
+        "Find peak element",
+        "Find square root of a number",
+        "Find Nth root of a number",
+        "Koko eating bananas",
+        "Minimum days to make M bouquets",
+        "Find the smallest divisor",
+        "Capacity to Ship Packages Within D Days",
+        "Kth Missing Positive Number",
+        "Painter's Partition",
+        "Kth element of 2 sorted arrays",
+        "Find Peak Element - II"
+      ],
+      "hard": [
+        "Aggressive Cows",
+        "Book Allocation Problem",
+        "Split array - largest sum",
+        "Minimize Max Distance to Gas Station",
+        "Median of 2 sorted arrays",
+        "Search in a 2D matrix",
+        "Search in 2D matrix - II",
+        "Matrix Median"
+      ]
+    },
+    {
+      "name": "Strings [Basic and Medium]",
+      "easy": [
+        "Largest Odd Number in a String",
+        "Longest Common Prefix",
+        "Isomorphic String",
+        "Rotate String",
+        "Check if two strings are anagram of each other",
+        "Sort Characters by Frequency",
+        "Count Number of Substrings"
+      ],
+      "medium": [
+        "Remove Outermost Parentheses",
+        "Reverse words in a given string / Palindrome Check",
+        "Maximum Nesting Depth of the Parentheses",
+        "Roman to Integer",
+        "String to Integer (atoi)",
+        "Longest Palindromic Substring",
+        "Sum of Beauty of All Substrings",
+        "Reverse every word in a string"
+      ],
+      "hard": []
+    },
+    {
+      "name": "Learn LinkedList [Single LL, Double LL, Medium, Hard Problems]",
+      "easy": [
+        "Introduction to Singly LinkedList",
+        "Insertion at the head of Linked List",
+        "Deletion of the head of LL",
+        "Find the length of the Linked List",
+        "Introduction to Doubly LL",
+        "Insert node before head in Doubly Linked List",
+        "Delete head of Doubly Linked List",
+        "Middle of a LinkedList [TortoiseHare Method]"
+      ],
+      "medium": [
+        "Search in Linked List",
+        "Reverse a Doubly Linked List",
+        "Reverse a LinkedList [Iterative]",
+        "Reverse a LL",
+        "Detect a loop in LL",
+        "Find the starting point in LL",
+        "Length of loop in LL",
+        "Check if LL is palindrome or not",
+        "Segregate odd and even nodes in Linked List",
+        "Remove Nth node from the back of the LL",
+        "Delete the middle node in LL",
+        "Sort a Linked List of 0's 1's and 2's",
+        "Find the intersection point of Y LL",
+        "Add one to a number represented by LL",
+        "Add two numbers in Linked List",
+        "Find Pairs with Given Sum in Doubly Linked List"
+      ],
+      "hard": [
+        "Sort LL",
+        "Delete all occurrences of a key in DLL",
+        "Remove duplicates from sorted DLL",
+        "Reverse LL in group of given size K",
+        "Rotate a LL",
+        "Flattening of LL",
+        "Clone a LL with random and next pointer"
+      ]
+    },
+    {
+      "name": "Recursion [PatternWise]",
+      "easy": [
+        "Pow(x, n)",
+        "Learn All Patterns of Subsequences (Theory)",
+        "Count all subsequences with sum K",
+        "Check if there exists a subsequence with sum K"
+      ],
+      "medium": [
+        "Recursive Implementation of atoi()",
+        "Count Good Numbers",
+        "Sort a stack using recursion",
+        "Reverse a Stack",
+        "Generate Binary Strings Without Consecutive 1s",
+        "Generate Parentheses",
+        "Power Set",
+        "Combination Sum",
+        "Combination Sum II",
+        "Subsets I",
+        "Subsets II",
+        "Combination Sum III",
+        "Word Break"
+      ],
+      "hard": [
+        "Letter Combinations of a Phone Number",
+        "Palindrome partitioning",
+        "Word Search",
+        "N Queen",
+        "Rat in a Maze",
+        "M Coloring Problem",
+        "Sudoku Solver",
+        "Expression Add Operators"
+      ]
+    },
+    {
+      "name": "Bit Manipulation [Concepts & Problems]",
+      "easy": [
+        "Introduction to Bits and Tricks",
+        "Check if the i-th bit is Set or Not",
+        "Check if a Number is Odd or Not",
+        "Check if a Number is Power of 2 or Not",
+        "Count the Number of Set Bits",
+        "Set/Unset the rightmost unset bit",
+        "Swap Two Numbers",
+        "Divisors of a Number",
+        "Pow(x,n)"
+      ],
+      "medium": [
+        "Divide two numbers without multiplication and division",
+        "Minimum Bit Flips to Convert Number",
+        "Single Number - I",
+        "Power Set Bit Manipulation",
+        "XOR of numbers in a given range",
+        "Single Number - III"
+      ],
+      "hard": [
+        "Print Prime Factors of a Number",
+        "Count primes in range L to R",
+        "Prime factorisation of a Number"
+      ]
+    },
+    {
+      "name": "Stack and Queues [Learning, Pre-In-Post-fix, Monotonic Stack, Implementation]",
+      "easy": [
+        "Implement Stack using Arrays",
+        "Implement Queue using Arrays",
+        "Implement Stack using Queue",
+        "Implement Queue using Stack",
+        "Implement stack using Linkedlist",
+        "Implement queue using Linkedlist",
+        "Balanced Paranthesis",
+        "Postfix to Infix Conversion",
+        "Number of Greater Elements to the Right"
+      ],
+      "medium": [
+        "Infix to Postfix Conversion",
+        "Prefix to Infix Conversion",
+        "Prefix to Postfix Conversion",
+        "Postfix to Prefix Conversion",
+        "Infix to Prefix Conversion",
+        "Next Greater Element",
+        "Next Greater Element - 2",
+        "Next Smaller Element",
+        "Sum of Subarray Minimums",
+        "Asteroid Collision",
+        "Sum of Subarray Ranges",
+        "Remove K Digits",
+        "LRU Cache"
+      ],
+      "hard": [
+        "Implement Min Stack",
+        "Trapping Rainwater",
+        "Largest rectangle in a histogram",
+        "Maximum Rectangles",
+        "Sliding Window Maximum",
+        "Stock span problem",
+        "Celebrity Problem",
+        "LFU Cache"
+      ]
+    },
+    {
+      "name": "Sliding Window & Two Pointer Combined Problems",
+      "easy": [],
+      "medium": [
+        "Longest Substring Without Repeating Characters",
+        " Max Consecutive Ones III",
+        " Fruit Into Baskets",
+        "Maximum Points You Can Obtain from Cards ",
+        "Subarrays with K Different Integers"
+      ],
+      "hard": [
+        "Longest Repeating Character Replacement",
+        "Binary Subarrays With Sum",
+        "Count number of Nice subarrays",
+        "Number of Substrings Containing All Three Characters",
+        "Longest Substring With At Most K Distinct Characters",
+        "Minimum Window Substring ",
+        "Minimum Window Subsequence"
+      ]
+    },
+    {
+      "name": "Heaps [Learning, Medium, Hard Problems]",
+      "easy": [
+        "Heaps (Theory Video)",
+        "Sort K sorted array",
+        "Replace Elements by Their Rank"
+      ],
+      "medium": [
+        "Kth smallest element in an array [use priority queue]",
+        "Implement Min Heap",
+        "Check if an array represents a min heap ",
+        "Convert Min Heap to Max Heap",
+        "K-th Largest element in an array",
+        "Task Scheduler",
+        "Hand of Straights",
+        "Design Twitter",
+        "Minimum Cost to Connect Sticks",
+        "Top K Frequent Elements"
+      ],
+      "hard": [
+        "Merge K sorted Lists",
+        "Kth largest element in a stream of running integers",
+        "Maximum Sum Combination",
+        "Find Median from Data Stream"
+      ]
+    },
+    {
+      "name": "Greedy Algorithms [Easy, Medium/Hard]",
+      "easy": [
+        "Assign Cookies",
+        "Lemonade Change",
+        "Jump Game - I"
+      ],
+      "medium": [
+        "Fractional Knapsack",
+        "N meetings in one room",
+        "Jump Game II",
+        "Minimum number of platforms required for a railway",
+        "Job sequencing Problem",
+        "Shortest Job First",
+        "Program for Least Recently Used (LRU) Page Replacement Algorithm",
+        "Insert Interval",
+        "Merge Intervals",
+        "Non-overlapping Intervals"
+      ],
+      "hard": [
+        "Valid Paranthesis Checker",
+        "Candy"
+      ]
+    },
+    {
+      "name": "Binary Trees [Traversals, Medium and Hard Problems]",
+      "easy": [
+        "Introduction to Trees",
+        "Binary Tree Representation in Java",
+        "Pre, Post, Inorder in one traversal",
+        "Preorder Traversal",
+        "Inorder Traversal of Binary Tree",
+        "Postorder Traversal",
+        "Level Order Traversal",
+        "Iterative Preorder Traversal of Binary Tree",
+        "Iterative Inorder Traversal of Binary Tree",
+        "Post-order Traversal of Binary Tree using 2 stack",
+        "Post-order Traversal of Binary Tree using 1 stack",
+        "Preorder, Inorder, and Postorder Traversal in one Traversal",
+        "Diameter of Binary Tree",
+        "Count total nodes in a complete BT"
+      ],
+      "medium": [
+        "Maximum Depth in BT",
+        "Check for balanced binary tree",
+        "Maximum path sum ",
+        "Check if two trees are identical or not",
+        "Zig Zag or Spiral Traversal",
+        "Boundary Traversal",
+        "Vertical Order Traversal",
+        "Top View of BT",
+        "Bottom view of BT",
+        "Right/Left View of Binary Tree",
+        "Symmetric Binary Tree",
+        "Print root to leaf path in BT",
+        "Maximum Width of BT",
+        "Children Sum Property in Binary Tree",
+        "Requirements needed to construct a unique BT",
+        "Flatten Binary Tree to Linked List"
+      ],
+      "hard": [
+        "LCA in BT",
+        "Print all nodes at a distance of K in BT",
+        "Minimum time taken to burn the BT from a given Node",
+        "Construct a BT from Preorder and Inorder",
+        "Construct the Binary Tree from Postorder and Inorder Traversal",
+        "Serialize and De-serialize BT",
+        "Morris Preorder Traversal of a Binary Tree",
+        "Morris Inorder Traversal of a Binary Tree"
+      ]
+    },
+    {
+      "name": "Binary Search Trees [Concept and Problems]",
+      "easy": [
+        "Introduction to BST",
+        "Search in a Binary Search Tree",
+        "Find Min/Max in BST",
+        "Floor and Ceil in a BST",
+        "Floor in a Binary Search Tree"
+      ],
+      "medium": [
+        "Insert a given node in BST",
+        "Delete a node in BST",
+        "Kth Smallest and Largest element in BST",
+        "Check if a tree is a BST or not",
+        "LCA in BST",
+        "Construct a BST from a preorder traversal",
+        "Inorder Successor/Predecessor in BST"
+      ],
+      "hard": [
+        "Merge 2 BST's",
+        "Two Sum In BST | Check if there exists a pair with Sum K",
+        "Correct BST with two nodes swapped",
+        "Largest BST in Binary Tree"
+      ]
+    },
+    {
+      "name": "Graphs [Concepts & Problems]",
+      "easy": [
+        "Introduction to Graph",
+        "Graph Representation | C++",
+        "Graph Representation | Java",
+        "MST theory"
+      ],
+      "medium": [
+        "Connected Components",
+        "Traversal Techniques",
+        "DFS",
+        "Number of provinces",
+        "Connected Components Problem in Matrix",
+        "Rotten Oranges",
+        "Flood fill algorithm",
+        "Distance of nearest cell having one",
+        "Surrounded Regions",
+        "Number of enclaves",
+        "Number of islands",
+        "Course Schedule II",
+        "Network Delay Time",
+        "Most stones removed with same row or column",
+        "Swim in Rising Water"
+      ],
+      "hard": [
+        "Cycle Detection in Undirected Graph (bfs)",
+        "Detect a cycle in an undirected graph",
+        "Word ladder I",
+        "Word ladder II",
+        "Bipartite Graph (DFS)",
+        "Cycle Detection in Directed Graph (DFS)",
+        "Topo Sort",
+        "Topological sort or Kahn's algorithm",
+        "Detect a cycle in a directed graph",
+        "Course Schedule I",
+        "Find eventual safe states",
+        "Alien Dictionary",
+        "Shortest path in undirected graph with unit weights",
+        "Shortest path in DAG",
+        "Djisktra's Algorithm",
+        "Why priority Queue is used in Djisktra's Algorithm",
+        "Shortest Distance in a Binary Maze",
+        "Path with minimum effort",
+        "Cheapest flight within K stops",
+        "Number of ways to arrive at destination",
+        "Minimum multiplications to reach end",
+        "Bellman Ford Algorithm",
+        "Floyd warshall algorithm",
+        "Find the city with the smallest number of neighbors",
+        "Prim's Algorithm",
+        "Disjoint Set ",
+        "Find the MST weight",
+        "Number of operations to make network connected",
+        "Accounts merge",
+        "Number of islands II",
+        "Making a large island",
+        "Bridges in graph",
+        "Articulation point in graph",
+        "Kosaraju's algorithm"
+      ]
+    },
+    {
+      "name": "Dynamic Programming [Patterns and Problems]",
+      "easy": [
+        "Introduction to DP",
+        "Assign Cookies",
+        "Count Square Submatrices with All Ones|(DP-56)"
+      ],
+      "medium": [
+        "Climbing stairs",
+        "Frog Jump",
+        "Frog jump with K distances",
+        "Maximum sum of non adjacent elements",
+        "House robber",
+        "Ninja's training",
+        "Grid Unique Paths : DP on Grids (DP8)",
+        "Unique paths II",
+        "Minimum Falling Path Sum",
+        "Triangle",
+        "Ninja and his Friends",
+        "Best time to buy and sell stock",
+        "Best time to buy and sell stock II",
+        "Best time to buy and sell stock III",
+        "Best time to buy and sell stock IV",
+        "Best Time to Buy and Sell Stock with Cooldown",
+        "Best time to buy and sell stock with transaction fees",
+        "Longest Increasing Subsequence",
+        "Print Longest Increasing Subsequence",
+        "Longest Increasing Subsequence |(DP-43)",
+        "Largest Divisible Subset",
+        "Longest String Chain",
+        "Longest Bitonic Subsequence",
+        "Number of Longest Increasing Subsequences",
+        "Different Ways to Evaluate a Boolean Expression",
+        "Partition Array for Maximum Sum"
+      ],
+      "hard": [
+        "Subset sum equal to target (DP- 14)",
+        "Partition equal subset sum",
+        "Partition a set into two subsets with minimum absolute sum difference",
+        "Count subsets with sum K",
+        "Count partitions with given difference",
+        "Minimum Coins (DP - 20)",
+        "Target sum",
+        "Coin Change 2 (DP - 22)",
+        "Unbounded knapsack",
+        "Rod Cutting Problem | (DP - 24)",
+        "Longest common subsequence",
+        "Print Longest Common Subsequence | (DP - 26)",
+        "Longest common substring",
+        "Longest palindromic subsequence",
+        "Minimum insertions to make string palindrome | DP-29",
+        "Minimum insertions or deletions to convert string A to B",
+        "Shortest common supersequence",
+        "Distinct subsequences",
+        "Edit distance",
+        "Wildcard matching",
+        "Matrix chain multiplication",
+        "Matrix Chain Multiplication | Bottom-Up|(DP-49)",
+        "Minimum cost to cut the stick",
+        "Burst balloons",
+        "Palindrome partitioning II ",
+        "Maximum Rectangle Area with all 1's|(DP-55)"
+      ]
+    },
+    {
+      "name": "Tries",
+      "easy": [
+        "Bit PreRequisites for TRIE Problems"
+      ],
+      "medium": [
+        "Longest Word with All Prefixes",
+        "Number of distinct substrings in a string"
+      ],
+      "hard": [
+        "Trie Implementation and Operations",
+        "Trie Implementation and Advanced Operations",
+        "Maximum XOR of two numbers in an array",
+        "Maximum Xor with an element from an array"
+      ]
+    },
+    {
+      "name": "Strings",
+      "easy": [
+        "Hashing In Strings | Theory"
+      ],
+      "medium": [
+        "Count Palindromic Subsequences"
+      ],
+      "hard": [
+        "Minimum number of bracket reversals to make an expression balanced",
+        "Count and say",
+        "Rabin Karp Algorithm",
+        "Z function",
+        "KMP Algorithm or LPS array",
+        "Shortest Palindrome",
+        "Longest happy prefix"
+      ]
+    }
+  ]
 }
