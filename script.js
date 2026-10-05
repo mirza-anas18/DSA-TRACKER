@@ -609,7 +609,7 @@ if (striverTopicsContainer) {
                 // TOPIC NAME
 
                 const topicName =
-                    document.createElement("h2");
+                    document.createElement("h3");
 
                 topicName.textContent = topic.name;
 
