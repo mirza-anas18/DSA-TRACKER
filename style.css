@@ -426,3 +426,217 @@ nav h2 {
 .sheets-heading p{
     margin-bottom: 2vh;
 }
+/* =========================================
+   TOPICS PAGE
+   ========================================= */
+
+.topics-layout {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 60px 30px;
+}
+
+
+.topics-heading {
+    margin-bottom: 40px;
+}
+
+
+.topics-label {
+    display: inline-block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.6;
+}
+
+
+.topics-heading h1 {
+    font-size: 42px;
+
+    margin: 0 0 10px;
+}
+
+
+.topics-heading p {
+    margin: 0;
+
+    font-size: 16px;
+
+    opacity: 0.65;
+
+    max-width: 600px;
+}
+
+
+.topics-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.topics-card {
+    position: relative;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.topics-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+.topics-number {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    opacity: 0.4;
+
+    margin-bottom: 18px;
+}
+
+
+.topics-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+}
+
+
+.topics-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   TOPICS RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .topics-layout {
+        padding: 40px 20px;
+    }
+
+
+    .topics-heading h1 {
+        font-size: 34px;
+    }
+
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   COMING SOON SHEETS
+   ========================================= */
+
+.coming-soon {
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon::after {
+    content: "";
+    position: absolute;
+
+    width: 150%;
+    height: 45px;
+
+    background: #27272a;
+
+    top: 50%;
+    left: -25%;
+
+    transform: rotate(-20deg);
+}
+
+.coming-soon-ribbon {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-20deg);
+
+    z-index: 2;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #fafafa;
+
+    white-space: nowrap;
+    padding-top: 43px;
+}
+
+
+.revision-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.revision-ribbon {
+    position: absolute;
+
+    width: 180px;
+    padding: 6px 0;
+
+    top: 25px;
+    right: -50px;
+
+    transform: rotate(35deg);
+
+    background-color: #27272a;
+    color: #a1a1aa;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    text-align: center;
+}

@@ -4,340 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topics - DSA Tracker</title>
-    <link rel="stylesheet" href="style.css">
 
+    <title>Topics - DSA Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <nav>
+
         <h2>DSA Tracker</h2>
 
         <div class="nav-links">
             <a href="index.html">Dashboard</a>
             <a href="sheets.html">Sheets</a>
-            <a href="topics.html">Topics</a>
+            <a href="topics.html" class="active">Topics</a>
         </div>
+
     </nav>
 
-    <main class="topics-page">
 
-        <div class="headings">
+    <main class="topics-layout">
+
+        <div class="topics-heading">
+
+            <span class="topics-label">LEARN & PRACTICE</span>
+
             <h1>DSA Topics</h1>
-            <p>Track your progress topic by topic.</p>
+
+            <p>
+                Explore the core data structures and algorithms
+                you need for problem solving.
+            </p>
+
         </div>
-        <div class="topic-container">
-            <!-- Arrays -->
-            <div class="topic-dropdown">
-
-                <div class="topic-header" id="arrays-header">
-
-                    <div class="topic-info">
-                        <h2>Arrays</h2>
-
-                        <div class="topic-progress">
-                            <span id="arrays-progress">0 / 10 completed</span>
-
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="arrays-progress-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span id="arrays-arrow">▼</span>
-
-                </div>
-
-                <div class="difficulty-section" id="arrays-content">
-
-                    <div class="difficulty-header" id="easy-header">
-
-                        <h3>Easy</h3>
-                        <span id="easy-arrow">▼</span>
-
-                    </div>
-
-                    <div class="problems-list" id="easy-content">
-
-                    </div>
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="medium-header">
-                            <h3>Medium</h3>
-                            <span id="medium-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="medium-content">
-                        </div>
-
-                    </div>
 
 
-                    <div class="difficulty-section">
+        <div class="topics-grid">
 
-                        <div class="difficulty-header" id="hard-header">
-                            <h3>Hard</h3>
-                            <span id="hard-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="hard-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="topics-card">
+                <span class="topics-number">01</span>
+                <h2>Arrays</h2>
+                <p>Fundamentals, traversal, sorting and manipulation.</p>
             </div>
 
 
-            <!-- Binary Search -->
-            <div class="topic-dropdown">
-
-                <div class="topic-header" id="binary-search-header">
-
-                    <div class="topic-info">
-                        <h2>Binary Search</h2>
-
-                        <div class="topic-progress">
-                            <span id="binary-search-progress">0 / 10 completed</span>
-
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="binary-search-progress-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span id="binary-search-arrow">▼</span>
-
-                </div>
-
-                <div class="difficulty-section" id="binary-search-content">
-
-                    <!-- Easy -->
-                    <div class="difficulty-header" id="binary-search-easy-header">
-                        <h3>Easy</h3>
-                        <span id="binary-search-easy-arrow">▼</span>
-                    </div>
-
-                    <div class="problems-list" id="binary-search-easy-content">
-                    </div>
-
-
-                    <!-- Medium -->
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="binary-search-medium-header">
-                            <h3>Medium</h3>
-                            <span id="binary-search-medium-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="binary-search-medium-content">
-                        </div>
-
-                    </div>
-
-
-                    <!-- Hard -->
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="binary-search-hard-header">
-                            <h3>Hard</h3>
-                            <span id="binary-search-hard-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="binary-search-hard-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Strings -->
-            <!-- Strings -->
-            <div class="topic-dropdown">
-
-                <div class="topic-header" id="strings-header">
-
-                    <div class="topic-info">
-                        <h2>Strings</h2>
-
-                        <div class="topic-progress">
-                            <span id="strings-progress">0 / 10 completed</span>
-
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="strings-progress-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span id="strings-arrow">▼</span>
-
-                </div>
-
-                <div class="difficulty-section" id="strings-content">
-
-                    <div class="difficulty-header" id="strings-easy-header">
-                        <h3>Easy</h3>
-                        <span id="strings-easy-arrow">▼</span>
-                    </div>
-
-                    <div class="problems-list" id="strings-easy-content">
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="strings-medium-header">
-                            <h3>Medium</h3>
-                            <span id="strings-medium-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="strings-medium-content">
-                        </div>
-
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="strings-hard-header">
-                            <h3>Hard</h3>
-                            <span id="strings-hard-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="strings-hard-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="topics-card">
+                <span class="topics-number">02</span>
+                <h2>Strings</h2>
+                <p>String manipulation, patterns and common techniques.</p>
             </div>
 
 
-            <!-- Linked List -->
-            <!-- Linked Lists -->
-            <div class="topic-dropdown">
-
-                <div class="topic-header" id="linked-list-header">
-
-                    <div class="topic-info">
-                        <h2>Linked Lists</h2>
-
-                        <div class="topic-progress">
-                            <span id="linked-list-progress">0 / 10 completed</span>
-
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="linked-list-progress-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span id="linked-list-arrow">▼</span>
-
-                </div>
-
-                <div class="difficulty-section" id="linked-list-content">
-
-                    <div class="difficulty-header" id="linked-list-easy-header">
-                        <h3>Easy</h3>
-                        <span id="linked-list-easy-arrow">▼</span>
-                    </div>
-
-                    <div class="problems-list" id="linked-list-easy-content">
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="linked-list-medium-header">
-                            <h3>Medium</h3>
-                            <span id="linked-list-medium-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="linked-list-medium-content">
-                        </div>
-
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="linked-list-hard-header">
-                            <h3>Hard</h3>
-                            <span id="linked-list-hard-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="linked-list-hard-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="topics-card">
+                <span class="topics-number">03</span>
+                <h2>Binary Search</h2>
+                <p>Searching techniques and binary search patterns.</p>
             </div>
 
 
-            <!-- Stack & Queue -->
-            <div class="topic-dropdown">
-
-                <div class="topic-header" id="stack-queue-header">
-
-                    <div class="topic-info">
-                        <h2>Stack & Queue</h2>
-
-                        <div class="topic-progress">
-                            <span id="stack-queue-progress">0 / 10 completed</span>
-
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="stack-queue-progress-fill"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span id="stack-queue-arrow">▼</span>
-
-                </div>
-
-                <div class="difficulty-section" id="stack-queue-content">
-
-                    <div class="difficulty-header" id="stack-queue-easy-header">
-                        <h3>Easy</h3>
-                        <span id="stack-queue-easy-arrow">▼</span>
-                    </div>
-
-                    <div class="problems-list" id="stack-queue-easy-content">
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="stack-queue-medium-header">
-                            <h3>Medium</h3>
-                            <span id="stack-queue-medium-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="stack-queue-medium-content">
-                        </div>
-
-                    </div>
-
-                    <div class="difficulty-section">
-
-                        <div class="difficulty-header" id="stack-queue-hard-header">
-                            <h3>Hard</h3>
-                            <span id="stack-queue-hard-arrow">▼</span>
-                        </div>
-
-                        <div class="problems-list" id="stack-queue-hard-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="topics-card">
+                <span class="topics-number">04</span>
+                <h2>Linked List</h2>
+                <p>Nodes, pointers, traversal and linked list problems.</p>
             </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">05</span>
+                <h2>Stack & Queue</h2>
+                <p>LIFO, FIFO and common stack and queue patterns.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">06</span>
+                <h2>Hashing</h2>
+                <p>Hash maps, frequency counting and lookup techniques.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">07</span>
+                <h2>Recursion</h2>
+                <p>Recursive thinking, backtracking and problem solving.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">08</span>
+                <h2>Trees</h2>
+                <p>Tree traversal, binary trees and recursive techniques.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">09</span>
+                <h2>Binary Search Tree</h2>
+                <p>BST operations, searching and tree-based problems.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">10</span>
+                <h2>Heap</h2>
+                <p>Priority queues, min heaps and max heaps.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">11</span>
+                <h2>Graphs</h2>
+                <p>BFS, DFS, shortest paths and graph algorithms.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">12</span>
+                <h2>Greedy</h2>
+                <p>Greedy strategies and optimization problems.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">13</span>
+                <h2>Dynamic Programming</h2>
+                <p>Memoization, tabulation and optimization techniques.</p>
+            </div>
+
+
+            <div class="topics-card">
+                <span class="topics-number">14</span>
+                <h2>Trie</h2>
+                <p>Prefix trees, word searching and string problems.</p>
+            </div>
+
+        </div>
 
     </main>
+
+
     <script src="script.js"></script>
+
 </body>
 
 </html>

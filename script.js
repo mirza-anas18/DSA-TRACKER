@@ -321,13 +321,7 @@ function updateStackQueueProgress() {
 }
 
 // ALL PROBLEMS FOR THE PROGRESS BAR ON DASHBOARD!
-const allProblems = [
-    ...allArrayProblems,
-    ...allBinarySearchProblems,
-    ...allStringsProblems,
-    ...allLinkedListProblems,
-    ...allStackQueueProblems
-];
+let allProblems = [];
 
 //storing the checkboxes in local storage using solvedproblems variable!
 let solvedProblems = JSON.parse(localStorage.getItem("solvedProblems")) || {};
@@ -562,19 +556,65 @@ if (totalProblemsElement) {
 }
 //--------------------------------------------------------------------.....--------------////
 // ===============================
+// ===============================
 // STRIVER A2Z SHEET
 // ===============================
 
 const striverTopicsContainer =
     document.getElementById("striver-topics");
 
-if (striverTopicsContainer) {
 
-    fetch("data/striver.json")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
+fetch("data/striver.json")
+    .then(function(response) {
+        return response.json();
+    })
+
+    .then(function(data) {
+
+        // ===============================
+        // BUILD ALL STRIVER PROBLEMS
+        // ===============================
+
+        allProblems = [];
+
+        data.topics.forEach(function(topic) {
+
+            allProblems.push(...(topic.easy || []));
+            allProblems.push(...(topic.medium || []));
+            allProblems.push(...(topic.hard || []));
+
+        });
+
+
+        // ===============================
+        // UPDATE DASHBOARD TOTAL
+        // ===============================
+
+        const totalProblemsElement =
+            document.getElementById("total-problems");
+
+        if (totalProblemsElement) {
+
+            totalProblemsElement.textContent =
+                allProblems.length;
+
+        }
+
+
+        // ===============================
+        // UPDATE DASHBOARD SOLVED
+        // ===============================
+
+        updateSolvedProblems();
+        updateOverallProgress();
+
+
+        // ===============================
+        // CREATE STRIVER PAGE
+        // ONLY IF STRIVER PAGE EXISTS
+        // ===============================
+
+        if (striverTopicsContainer) {
 
             data.topics.forEach(function(topic) {
 
@@ -585,7 +625,9 @@ if (striverTopicsContainer) {
                 const topicDropdown =
                     document.createElement("div");
 
-                topicDropdown.classList.add("topic-dropdown");
+                topicDropdown.classList.add(
+                    "topic-dropdown"
+                );
 
 
                 // -------------------------------
@@ -595,23 +637,32 @@ if (striverTopicsContainer) {
                 const topicHeader =
                     document.createElement("div");
 
-                topicHeader.classList.add("topic-header");
+                topicHeader.classList.add(
+                    "topic-header"
+                );
 
 
+                // -------------------------------
                 // TOPIC INFO
+                // -------------------------------
 
                 const topicInfo =
                     document.createElement("div");
 
-                topicInfo.classList.add("topic-info");
+                topicInfo.classList.add(
+                    "topic-info"
+                );
 
 
+                // -------------------------------
                 // TOPIC NAME
+                // -------------------------------
 
                 const topicName =
                     document.createElement("h3");
 
-                topicName.textContent = topic.name;
+                topicName.textContent =
+                    topic.name;
 
 
                 // -------------------------------
@@ -621,7 +672,9 @@ if (striverTopicsContainer) {
                 const topicProgress =
                     document.createElement("div");
 
-                topicProgress.classList.add("topic-progress");
+                topicProgress.classList.add(
+                    "topic-progress"
+                );
 
 
                 const progressText =
@@ -631,22 +684,39 @@ if (striverTopicsContainer) {
                 const progressBar =
                     document.createElement("div");
 
-                progressBar.classList.add("progress-bar");
+                progressBar.classList.add(
+                    "progress-bar"
+                );
 
 
                 const progressFill =
                     document.createElement("div");
 
-                progressFill.classList.add("progress-fill");
+                progressFill.classList.add(
+                    "progress-fill"
+                );
 
 
-                progressBar.appendChild(progressFill);
+                progressBar.appendChild(
+                    progressFill
+                );
 
-                topicProgress.appendChild(progressText);
-                topicProgress.appendChild(progressBar);
+                topicProgress.appendChild(
+                    progressText
+                );
 
-                topicInfo.appendChild(topicName);
-                topicInfo.appendChild(topicProgress);
+                topicProgress.appendChild(
+                    progressBar
+                );
+
+
+                topicInfo.appendChild(
+                    topicName
+                );
+
+                topicInfo.appendChild(
+                    topicProgress
+                );
 
 
                 // -------------------------------
@@ -659,8 +729,13 @@ if (striverTopicsContainer) {
                 topicArrow.textContent = "▼";
 
 
-                topicHeader.appendChild(topicInfo);
-                topicHeader.appendChild(topicArrow);
+                topicHeader.appendChild(
+                    topicInfo
+                );
+
+                topicHeader.appendChild(
+                    topicArrow
+                );
 
 
                 // -------------------------------
@@ -674,7 +749,8 @@ if (striverTopicsContainer) {
                     "difficulty-section"
                 );
 
-                difficultySection.style.display = "none";
+                difficultySection.style.display =
+                    "none";
 
 
                 // -------------------------------
@@ -704,7 +780,8 @@ if (striverTopicsContainer) {
                     const difficultyArrow =
                         document.createElement("span");
 
-                    difficultyArrow.textContent = "▼";
+                    difficultyArrow.textContent =
+                        "▼";
 
 
                     difficultyHeader.appendChild(
@@ -716,7 +793,9 @@ if (striverTopicsContainer) {
                     );
 
 
+                    // -------------------------------
                     // PROBLEMS LIST
+                    // -------------------------------
 
                     const problemsList =
                         document.createElement("div");
@@ -725,10 +804,13 @@ if (striverTopicsContainer) {
                         "problems-list"
                     );
 
-                    problemsList.style.display = "none";
+                    problemsList.style.display =
+                        "none";
 
 
+                    // -------------------------------
                     // CREATE EACH PROBLEM
+                    // -------------------------------
 
                     problemList.forEach(function(problem) {
 
@@ -743,7 +825,8 @@ if (striverTopicsContainer) {
                         const problemName =
                             document.createElement("span");
 
-                        problemName.textContent = problem;
+                        problemName.textContent =
+                            problem;
 
 
                         const checkbox =
@@ -786,16 +869,24 @@ if (striverTopicsContainer) {
                         );
 
 
-                        problemItem.appendChild(problemName);
+                        problemItem.appendChild(
+                            problemName
+                        );
 
-                        problemItem.appendChild(checkbox);
+                        problemItem.appendChild(
+                            checkbox
+                        );
 
-                        problemsList.appendChild(problemItem);
+                        problemsList.appendChild(
+                            problemItem
+                        );
 
                     });
 
 
+                    // -------------------------------
                     // DIFFICULTY DROPDOWN
+                    // -------------------------------
 
                     difficultyHeader.addEventListener(
                         "click",
@@ -891,7 +982,7 @@ if (striverTopicsContainer) {
 
 
                 // -------------------------------
-                // TOPIC PROGRESS FUNCTION
+                // TOPIC PROGRESS
                 // -------------------------------
 
                 function updateTopicProgress() {
@@ -961,21 +1052,23 @@ if (striverTopicsContainer) {
                 );
 
 
+                // -------------------------------
                 // INITIAL PROGRESS
+                // -------------------------------
 
                 updateTopicProgress();
 
             });
 
-        })
+        }
 
-        .catch(function(error) {
+    })
 
-            console.error(
-                "Error loading Striver data:",
-                error
-            );
+    .catch(function(error) {
 
-        });
+        console.error(
+            "Error loading Striver data:",
+            error
+        );
 
-}
+    });
