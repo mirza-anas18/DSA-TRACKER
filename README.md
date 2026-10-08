@@ -1,120 +1,205 @@
 # DSA Tracker
 
-A web-based DSA (Data Structures and Algorithms) learning tracker built to organize my problem-solving journey, monitor topic-wise progress, and keep track of problems completed across different DSA sheets.
+A personal web-based **DSA (Data Structures and Algorithms) learning tracker** built to organize my problem-solving journey, track solved problems, and monitor overall progress.
 
-> 🚧 **Status:** Actively under development
+> 🚀 **Status: V1 Complete**
 
 ## 📌 About the Project
 
 DSA Tracker is a personal learning tool designed to make consistent DSA practice easier to manage.
 
-Instead of keeping track of solved problems, topics, and progress manually, the application brings them together into a single interface.
+Instead of manually tracking solved problems and progress, the application provides a single interface to:
 
-The project is also being developed as part of my journey toward becoming a stronger software developer, with the application evolving alongside my web-development skills.
+* Track DSA problems
+* Organize problems by topic and difficulty
+* Monitor overall progress
+* Follow the **Striver A2Z DSA Sheet**
+* Persist solved problems using browser local storage
+
+The project is also part of my journey toward becoming a stronger software developer, with the application evolving alongside my web-development skills.
 
 ## 🔗 Live Demo
 
 👉 **[View DSA Tracker](https://mirza-anas18.github.io/DSA-TRACKER/)**
 
+## ✨ V1 Features
 
-## ✨ Current Features
+* 📊 **Dynamic progress dashboard**
+* 📚 **DSA topic organization**
+* 📝 **Problem tracking with checkboxes**
+* 📈 **Overall solved progress**
+* 📖 **Striver A2Z DSA Sheet**
+* 🎯 **Easy, Medium and Hard problem organization**
+* 💾 **Persistent progress using Local Storage**
+* 🔄 **Dynamic problem rendering from JSON**
+* 🌙 **Dark-themed interface**
+* 📱 **Responsive layout**
 
-* 📊 DSA progress dashboard
-* 📚 Topic-wise DSA organization
-* 📝 DSA problem tracking
-* 📈 Visual progress indicators
-* 📖 DSA sheet section
-* 🌙 Dark-themed interface
-* 📱 Responsive UI *(being improved throughout development)*
+### Current Flow
+
+```text
+Dashboard
+    ↓
+Start Tracking
+    ↓
+Striver A2Z
+    ↓
+Choose Topic
+    ↓
+Choose Difficulty
+    ↓
+Solve Problems
+    ↓
+Mark Problems as Solved
+    ↓
+Progress Updates Automatically
+```
 
 ## 🛠️ Tech Stack
 
 ### Current
 
-* **HTML5** — Structure and content
-* **CSS3** — Styling and responsive layouts
-* **JavaScript** — Interactivity and application logic
+* **HTML5** — Page structure and content
+* **CSS3** — Styling, layouts and responsive design
+* **JavaScript** — Application logic, DOM manipulation and interactivity
+* **JSON** — DSA problem data
+* **Local Storage** — Persistent problem tracking
+* **Git & GitHub** — Version control and deployment
 
 ### Planned
 
-* **React.js** — Frontend development
+* **React.js** — Frontend rebuild
 * **Node.js** — Backend runtime
 * **Express.js** — Backend framework
 * **MongoDB** — Database
-* **Git & GitHub** — Version control and project management
+* **Authentication** — User accounts and personalized tracking
 
 ## 🗂️ Project Structure
 
 ```text
 DSA-Tracker/
 │
-├── index.html       # Dashboard
-├── topics.html      # DSA topics
-├── sheets.html      # DSA sheets
-├── style.css        # Styling
-├── script.js        # JavaScript functionality
-└── README.md        # Project documentation
+├── index.html          # Dashboard
+├── sheets.html         # DSA sheets
+├── striver.html        # Striver A2Z problem tracker
+├── topics.html         # DSA topics
+│
+├── data/
+│   └── striver.json    # Striver A2Z problem data
+│
+├── style.css           # Global styling
+├── script.js           # JavaScript functionality
+└── README.md           # Project documentation
 ```
 
 ## 🚀 Development Roadmap
 
-* [x] Build initial dashboard UI
+### V1 — Complete ✅
+
+* [x] Build dashboard UI
 * [x] Create DSA topics page
 * [x] Create DSA sheets page
-* [x] Add initial progress tracking UI
-* [x] Store DSA problems using JavaScript objects
+* [x] Build Striver A2Z tracker
+* [x] Add complete Striver problem data
+* [x] Organize problems by topic and difficulty
 * [x] Add interactive problem checkboxes
-* [x] Add persistent progress tracking
-* [x] Improve dashboard statistics
-* [ ] Refactor and organize JavaScript
-* [ ] Rebuild the frontend using React
-* [ ] Develop backend using Node.js and Express
+* [x] Store solved state using Local Storage
+* [x] Dynamically render problems from JSON
+* [x] Display total problem count
+* [x] Display solved problem count
+* [x] Add overall progress tracking
+* [x] Connect dashboard statistics with solved problems
+* [x] Add navigation between pages
+* [x] Deploy the application using GitHub Pages
+
+### V1.5 — Planned
+
+* [ ] Refactor and clean JavaScript
+* [ ] Clean unused CSS and legacy code
+* [ ] Improve UI/UX
+* [ ] Improve mobile responsiveness
+* [ ] Add revision tracking
+* [ ] Improve dashboard statistics
+* [ ] Improve README and documentation
+
+### V2 — React
+
+* [ ] Rebuild frontend using React
+* [ ] Component-based architecture
+* [ ] Improve state management
+* [ ] Improve overall UI/UX
+
+### V3 — Full Stack
+
+* [ ] Build backend using Node.js and Express
 * [ ] Integrate MongoDB
+* [ ] Add user authentication
+* [ ] Create personalized DSA profiles
+* [ ] Store progress in a database
+* [ ] Add cross-device progress synchronization
 * [ ] Deploy the full-stack application
 
+## 📚 DSA Practice
 
-## 🎯 Goals
+The tracker is currently built around the **Striver A2Z DSA Sheet**, which is the primary DSA roadmap being followed for this project.
+
+The sheet covers topics including:
+
+* Arrays
+* Sorting
+* Binary Search
+* Strings
+* Linked Lists
+* Stack & Queue
+* Greedy Algorithms
+* Recursion
+* Binary Trees
+* Binary Search Trees
+* Heaps
+* Graphs
+* Dynamic Programming
+* Tries
+* And more
+
+## 🎯 Project Goals
 
 The main goals of this project are to:
 
 * Maintain a consistent DSA practice routine
-* Organize problems by topic and difficulty
-* Track progress over time
+* Track problems solved during preparation
+* Understand DSA concepts through practical problem solving
 * Practice real-world frontend development
-* Gradually evolve the application into a full-stack project
-
-## 📚 DSA Practice
-
-The tracker is being developed alongside my DSA preparation, with problems organized around commonly studied topics such as:
-
-* Arrays
-* Strings
-* Binary Search
-* Linked Lists
-* Stacks & Queues
-* Recursion
-* Trees
-* Graphs
-* Dynamic Programming
-* And more
+* Learn how to structure and maintain a growing web application
+* Gradually evolve the project into a full-stack application
 
 ## 🔮 Future Vision
 
-The long-term goal is to turn DSA Tracker into a complete full-stack application where users can:
+The long-term goal is to transform DSA Tracker from a personal frontend tracker into a complete full-stack DSA learning platform.
 
-* Create and manage their own DSA profiles
-* Track solved problems
-* Monitor topic-wise progress
-* Maintain multiple DSA sheets
-* View detailed statistics
-* Persist their progress across devices
+Future versions may allow users to:
+
+* Create personal DSA profiles
+* Track solved problems across devices
+* Maintain personalized DSA sheets
+* Monitor detailed topic-wise statistics
+* Track revision progress
+* View long-term learning analytics
+* Manage their own DSA roadmaps
 
 ## 👨‍💻 Developer
 
 **Mirza Anas Baig**
 
-Computer Science Engineering student focused on strengthening problem-solving skills and building practical software projects.
+Computer Science Engineering student focused on strengthening problem-solving skills, learning software development, and building practical projects.
 
 ---
 
-⭐ This project is actively being developed and improved as I learn new technologies.
+### ⭐ Project Status
+
+**DSA Tracker V1 is complete.**
+
+The current version focuses on building a functional foundation using HTML, CSS, JavaScript, JSON and Local Storage.
+
+The next major milestone is rebuilding the application with **React** and gradually evolving it into a full-stack application.
+
+⭐ Built while learning, solving problems, and improving one step at a time.
