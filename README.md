@@ -14,7 +14,8 @@ Instead of manually tracking solved problems and progress, the application provi
 * Organize problems by topic and difficulty
 * Monitor overall progress
 * Follow the **Striver A2Z DSA Sheet**
-* Persist solved problems using browser local storage
+* Persist solved problems using browser Local Storage
+* Access the tracker through a responsive layout across different screen sizes
 
 The project is also part of my journey toward becoming a stronger software developer, with the application evolving alongside my web-development skills.
 
@@ -33,7 +34,8 @@ The project is also part of my journey toward becoming a stronger software devel
 * 💾 **Persistent progress using Local Storage**
 * 🔄 **Dynamic problem rendering from JSON**
 * 🌙 **Dark-themed interface**
-* 📱 **Responsive layout**
+* 📱 **Responsive layout for desktop and mobile screens**
+* 🔗 **Navigation between application pages**
 
 ### Current Flow
 
@@ -65,6 +67,7 @@ Progress Updates Automatically
 * **JSON** — DSA problem data
 * **Local Storage** — Persistent problem tracking
 * **Git & GitHub** — Version control and deployment
+* **GitHub Pages** — Live deployment
 
 ### Planned
 
@@ -87,7 +90,7 @@ DSA-Tracker/
 ├── data/
 │   └── striver.json    # Striver A2Z problem data
 │
-├── style.css           # Global styling
+├── style.css           # Global styling and responsive layouts
 ├── script.js           # JavaScript functionality
 └── README.md           # Project documentation
 ```
@@ -100,7 +103,7 @@ DSA-Tracker/
 * [x] Create DSA topics page
 * [x] Create DSA sheets page
 * [x] Build Striver A2Z tracker
-* [x] Add complete Striver problem data
+* [x] Add Striver problem data
 * [x] Organize problems by topic and difficulty
 * [x] Add interactive problem checkboxes
 * [x] Store solved state using Local Storage
@@ -110,14 +113,15 @@ DSA-Tracker/
 * [x] Add overall progress tracking
 * [x] Connect dashboard statistics with solved problems
 * [x] Add navigation between pages
+* [x] Implement responsive layouts for smaller screens
 * [x] Deploy the application using GitHub Pages
 
-### V1.5 — Planned
+### V1.5 — Refinement
 
 * [ ] Refactor and clean JavaScript
-* [ ] Clean unused CSS and legacy code
+* [ ] Remove unused CSS and legacy code
 * [ ] Improve UI/UX
-* [ ] Improve mobile responsiveness
+* [ ] Test and refine mobile responsiveness across all pages
 * [ ] Add revision tracking
 * [ ] Improve dashboard statistics
 * [ ] Improve README and documentation
@@ -125,7 +129,7 @@ DSA-Tracker/
 ### V2 — React
 
 * [ ] Rebuild frontend using React
-* [ ] Component-based architecture
+* [ ] Introduce component-based architecture
 * [ ] Improve state management
 * [ ] Improve overall UI/UX
 
@@ -198,7 +202,7 @@ Computer Science Engineering student focused on strengthening problem-solving sk
 
 **DSA Tracker V1 is complete.**
 
-The current version focuses on building a functional foundation using HTML, CSS, JavaScript, JSON and Local Storage.
+The current version establishes a functional frontend foundation using HTML, CSS, JavaScript, JSON and Local Storage, with responsive layouts for smaller screens.
 
 The next major milestone is rebuilding the application with **React** and gradually evolving it into a full-stack application.
 
