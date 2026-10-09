@@ -517,3 +517,28 @@ nav h2 {
         max-width: 320px;
     }
 }
+
+
+
+/* Topic cards on mobile */
+@media (max-width: 480px) {
+    .topic-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .topic-info {
+        min-width: 0;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .topic-progress {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .topic-progress .progress-bar {
+        width: 100%;
+    }
+}
